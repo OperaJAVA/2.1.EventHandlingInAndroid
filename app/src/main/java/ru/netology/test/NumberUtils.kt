@@ -1,5 +1,9 @@
 package ru.netology.test
 
+import android.annotation.SuppressLint
+import kotlin.text.*
+
+@SuppressLint("DefaultLocale")
 fun formatNumber(number: Int): String {
     return when {
         number < 1000 -> number.toString()
