@@ -1,7 +1,6 @@
 package ru.netology.test
 
 import android.annotation.SuppressLint
-import kotlin.text.*
 
 @SuppressLint("DefaultLocale")
 fun formatNumber(number: Int): String {
@@ -16,6 +15,7 @@ fun formatNumber(number: Int): String {
                 String.format("%d,%dK", integerPart, decimalPart)
             }
         }
+
         number < 1_000_000 -> {
             val decimalPart = (number % 1000) / 100
             val integerPart = number / 1000
@@ -25,6 +25,7 @@ fun formatNumber(number: Int): String {
                 String.format("%dK", integerPart, decimalPart)
             }
         }
+
         number < 100_000_000 -> {
             val decimalPart = (number % 1_000_000) / 100_000
             val integerPart = number / 1_000_000
@@ -34,6 +35,7 @@ fun formatNumber(number: Int): String {
                 String.format("%d,%dM", integerPart, decimalPart)
             }
         }
+
         else -> String.format("%.1fM", number / 1_000_000.0)
     }
 }
